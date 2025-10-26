@@ -11,12 +11,17 @@ impl Solution {
                 neg.push(i);
             }
         }
-        for i in 0..nums.len(){
-            if i%2==0{
-                nums[i]=pos[i/2];
-            }else{
-                nums[i]=neg[i/2];
-            }
+        // for i in 0..nums.len(){
+        //     if i%2==0{
+        //         nums[i]=pos[i/2];
+        //     }else{
+        //         nums[i]=neg[i/2];
+        //     }
+        // }
+        for i in 0..nums.len()/2{
+            nums[2*i]=pos[i];
+            nums[2*i+1]=neg[i];
+            
         }
         return nums.to_vec()
     }
