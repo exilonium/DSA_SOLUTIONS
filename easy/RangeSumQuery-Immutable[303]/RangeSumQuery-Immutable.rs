@@ -12,8 +12,10 @@ impl NumArray {
     fn new(nums: Vec<i32>) -> Self {
         let size = nums.len();
         let mut prev_sum = vec![0;size+1];
+        let mut prev = 0;
         for i in 0..size{
-            prev_sum[i+1] = prev_sum[i] + nums[i];
+            prev = prev+nums[i];
+            prev_sum[i+1] = prev;
         }
         Self { prev_sum }
     }
